@@ -8,9 +8,9 @@
             <a href>Have an account?</a>
           </p>
 
-          <ul class="error-messages">
+          <!-- <ul class="error-messages">
             <li>That email is already taken</li>
-          </ul>
+          </ul>-->
 
           <form>
             <fieldset class="form-group">
