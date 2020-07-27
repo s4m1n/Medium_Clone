@@ -2,7 +2,7 @@
   <div class="home-page">
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">conduit</h1>
+        <h1 class="logo-font">MedClone</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
@@ -52,15 +52,15 @@ import articles from "../store/modules/articles";
 import { Article } from "../interfaces/Article";
 @Component({
   components: {
-    ArticlePreview
-  }
+    ArticlePreview,
+  },
 })
 export default class App extends Vue {
   feed: Article[] = [];
 
   created() {
-    articles.refreshGlobalFeed().then(() => {
-      this.feed = articles.globalFeed;
+    articles.refreshFeed("global").then(() => {
+      this.feed = articles.feed;
     });
   }
 }
