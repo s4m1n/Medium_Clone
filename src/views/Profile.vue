@@ -80,8 +80,21 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import users from "../store/modules/users";
+
+@Component
+export default class Profile extends Vue {
+  created() {
+    // console.log(this.$route.params);
+    users.loadProfile(this.$route.params.username);
+  }
+
+  get profile() {
+    return users.profile;
+  }
+}
 </script>
 
 <style>

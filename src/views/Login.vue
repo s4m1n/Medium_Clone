@@ -47,10 +47,14 @@ export default class Login extends Vue {
   password = "";
 
   login() {
-    users.login({
-      email: this.email,
-      password: this.password
-    });
+    users
+      .login({
+        email: this.email,
+        password: this.password,
+      })
+      .then(() => {
+        this.$router.push({ name: "Home" });
+      });
   }
 }
 </script>

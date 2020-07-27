@@ -21,7 +21,7 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/Register.vue'),
   },
   {
-    path: '/profile',
+    path: '/@:username',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
   },
