@@ -9,7 +9,7 @@
           </p>
 
           <ul class="error-messages" v-if="loginError">
-            <li>{{loginError}}</li>
+            <li style="list-style: none">{{loginError}}</li>
           </ul>
 
           <form @submit.prevent="login()">
@@ -58,7 +58,10 @@ export default class Login extends Vue {
       })
       .catch((err) => {
         console.log(err);
-        this.loginError = err.message;
+        this.loginError = "Invalid username or password";
+        setTimeout(() => {
+          this.loginError = "";
+        }, 2000);
       });
   }
 }
